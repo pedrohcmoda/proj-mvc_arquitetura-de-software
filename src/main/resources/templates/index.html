@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+</head>
+<body>
+    <h1 th:text="${modelo.mensagemPadrao}">Ambiente Configurado</h1>
+
+    <h2>Multiplicar Dois Números</h2>
+    <form action="/multiplicar" method="get">
+        <label for="numero1">Digite o primeiro número:</label>
+        <input type="number" id="numero1" name="numero1" required>
+        
+        <label for="numero2">Digite o segundo número:</label>
+        <input type="number" id="numero2" name="numero2" required>
+        
+        <button type="submit">Multiplicar</button>
+    </form>
+
+    <div th:if="${modelo.resultado}">
+        <p th:text="'O resultado da multiplicação é: ' + ${modelo.resultado}"></p>
+    </div>
+
+</body>
+</html>
